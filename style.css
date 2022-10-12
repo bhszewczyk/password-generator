@@ -34,7 +34,7 @@ h1 {
 }
 
 h1 span {
-	display: inline-block;
+	display: block;
 	color: var(--accent-color);
 }
 
@@ -47,7 +47,7 @@ h3 {
 .container {
 	background-color: var(--primary-color);
 	color: var(--grey-color-light);
-	width: 600px;
+	width: 800px;
 	display: flex;
 	flex-direction: column;
 	padding: 2rem 4rem;
@@ -74,8 +74,21 @@ h3 {
 
 .password-suggestion {
 	background-color: var(--primary-color--dark);
+	font-size: inherit;
+	font-family: inherit;
+	border: 0;
 	padding: 0.8rem 1.6rem;
-	width: 45%;
+	width: 48%;
 	border-radius: 4px;
 	color: var(--accent-color);
+	transition: background-color 0.4s ease-out;
+}
+
+.password-suggestion:active,
+.password-suggestion:focus {
+	outline: 1px solid var(--accent-color);
+}
+
+.password-suggestion.copied {
+	background-color: var(--primary-color);
 }
