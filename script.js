@@ -1,9 +1,18 @@
 const btnGeneratePassword = document.querySelector('.generate-password');
 const passwordSuggestions = document.querySelector('.passwords');
+const optionsForm = document.querySelector('.options');
 
-btnGeneratePassword.addEventListener('click', getPasswordSuggestions);
+btnGeneratePassword.addEventListener('click', (e) => {
+	e.preventDefault();
 
-function getPassword(length) {
+	const length = +optionsForm.length.value;
+	const includeNumbers = optionsForm.numbers.checked;
+	const includespecialCharas = optionsForm.symbols.checked;
+
+	getPasswordSuggestions(length, includeNumbers, includespecialCharas);
+});
+
+function getPassword(length, includeNumbers, includeSymbols) {
 	const characters = [
 		'A',
 		'B',
@@ -92,9 +101,17 @@ function getPassword(length) {
 		'/',
 	];
 
-	const availableCharacters = characters
-		.concat(numbers)
-		.concat(specialCharacters);
+	let availableCharacters = characters;
+
+	if (includeNumbers) {
+		availableCharacters = characters.concat(numbers);
+	}
+
+	if (includeSymbols) {
+		availableCharacters = availableCharacters.concat(specialCharacters);
+	}
+
+	console.log(availableCharacters);
 
 	let password = '';
 
@@ -108,13 +125,16 @@ function getPassword(length) {
 	return password;
 }
 
-function getPasswordSuggestions() {
-	const length = 16;
+function getPasswordSuggestions(
+	length = 16,
+	includeNumbers = false,
+	includeSymbols = false
+) {
 	const suggestionsEl = document.querySelectorAll('.password-suggestion');
 
 	suggestionsEl.forEach((element) => {
-		console.log(element);
-		element.value = `${getPassword(length)}`;
+		// console.log(element);
+		element.value = `${getPassword(length, includeNumbers, includeSymbols)}`;
 	});
 }
 

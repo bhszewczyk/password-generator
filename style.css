@@ -54,7 +54,64 @@ h3 {
 	border-radius: 10px;
 }
 
+.options {
+	font-size: 2rem;
+	margin: 6rem 0;
+}
+
+.option {
+	display: flex;
+	justify-content: start;
+	padding: 0.4rem 0;
+	margin-bottom: 1.2rem;
+}
+
+.option label {
+	flex-basis: 280px;
+	font-weight: 300;
+}
+
+#length {
+	background-color: var(--primary-color--dark);
+	font-size: 2.4rem;
+	font-family: inherit;
+	border: 0;
+	width: 20%;
+	border-radius: 4px;
+	color: var(--accent-color);
+}
+
+input[type='checkbox'] {
+	appearance: none;
+	width: 3rem;
+	height: 3rem;
+	background-color: var(--primary-color--dark);
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+input[type='checkbox']:after {
+	content: '';
+	height: 2.2rem;
+	width: 2.2rem;
+	background-color: #f6ae2d;
+	border-radius: 50%;
+	display: none;
+}
+
+input[type='checkbox']:hover {
+	background-color: #1c2c35a2;
+}
+
+input[type='checkbox']:checked:after {
+	display: block;
+}
+
 .btn {
+	display: inline-block;
 	background-color: var(--accent-color);
 	border: 0;
 	border-radius: 4px;
@@ -62,6 +119,16 @@ h3 {
 	font-family: inherit;
 	font-size: 2.4rem;
 	margin: 4rem 0;
+	transition: all 0.2s ease-out;
+}
+
+.btn:hover {
+	background-color: var(--primary-color--dark);
+	color: var(--accent-color);
+}
+
+.btn:active {
+	transform: scale(0.95);
 }
 
 .passwords {

@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="style.css" />
 		<title>Password generator</title>
 	</head>
@@ -14,12 +15,21 @@
 				<h3>Never use the insecure password again.</h3>
 			</header>
 			<div class="main">
-				<div class="options">
-					<div class="option length"></div>
-					<div class="option symbols"></div>
-					<div class="option numbers"></div>
-				</div>
-				<button class="generate-password btn">Generate passwords</button>
+				<form class="options">
+					<div class="option length">
+						<label for="length">Select password length</label>
+						<input type="number" id="length" name="length" placeholder="16" value="16"></input>
+					</div>
+					<div class="option numbers">
+						<label for="numbers">Include numbers</label>
+						<input type="checkbox" id="numbers" name="numbers"placeholder="set length"><span class="checkbox-custom"></span></input>
+					</div>
+					<div class="option symbols">
+						<label for="length">Include special characters</label>
+						<input type="checkbox" id="symbols" name="symbols" placeholder="set length"><span class="checkbox-custom"></span></input>
+					</div>
+					<button type="submit" class="generate-password btn">Generate passwords</button>
+				</form>
 				<div class="passwords">
 					<input type="text" class="password-suggestion password-suggestion-1" value=""></input>
 					<input type="text" class="password-suggestion password-suggestion-2" value=""></input>
