@@ -86,7 +86,7 @@ input[type='checkbox'] {
 	width: 3rem;
 	height: 3rem;
 	background-color: var(--primary-color--dark);
-	border-radius: 50%;
+	border-radius: 4px;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-around;
@@ -94,11 +94,14 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox']:after {
-	content: '';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	font-size: 2.4rem;
+	content: '\f00c';
 	height: 2.2rem;
 	width: 2.2rem;
-	background-color: #f6ae2d;
-	border-radius: 50%;
+	color: #f6ae2d;
+	border-radius: 4px;
 	display: none;
 }
 
