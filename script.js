@@ -1,4 +1,5 @@
 const btnGeneratePassword = document.querySelector('.generate-password');
+const passwordSuggestions = document.querySelector('.passwords');
 
 btnGeneratePassword.addEventListener('click', getPasswordSuggestions);
 
@@ -116,3 +117,15 @@ function getPasswordSuggestions() {
 		element.value = `${getPassword(length)}`;
 	});
 }
+
+passwordSuggestions.addEventListener('click', (e) => {
+	const passwordClicked = e.target;
+
+	navigator.clipboard.writeText(passwordClicked.value);
+
+	passwordClicked.classList.add('copied');
+
+	setTimeout(() => {
+		passwordClicked.classList.remove('copied');
+	}, 400);
+});
